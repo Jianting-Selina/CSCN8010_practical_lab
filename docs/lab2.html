@@ -7563,15 +7563,10 @@ age age in years</p>
 
 <span class="c1"># load data</span>
 <span class="n">diabetes_X</span><span class="p">,</span> <span class="n">diabetes_y</span> <span class="o">=</span> <span class="n">datasets</span><span class="o">.</span><span class="n">load_diabetes</span><span class="p">(</span><span class="n">return_X_y</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">as_frame</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span><span class="n">scaled</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
-<span class="c1">#diabetes_X, diabetes_y = datasets.load_diabetes()</span>
-<span class="c1">#m = datasets.load_diabetes()</span>
+
 <span class="c1"># convert to dataframe</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">diabetes_X</span><span class="p">)</span>
-<span class="n">data</span><span class="o">.</span><span class="n">keys</span><span class="p">()</span>
-<span class="c1">#type(m)</span>
-<span class="nb">type</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-
-<span class="c1">#print(data.head(100))</span>
+<span class="n">data</span>
 </pre></div>
 </div>
 </div>
@@ -7583,22 +7578,185 @@ age age in years</p>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
 <div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
-<div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
-<pre>pandas.core.frame.DataFrame</pre>
+<div class="jp-RenderedHTMLCommon jp-RenderedHTML jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/html" tabindex="0">
+<div>
+<style scoped="">
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+<thead>
+<tr style="text-align: right;">
+<th></th>
+<th>age</th>
+<th>sex</th>
+<th>bmi</th>
+<th>bp</th>
+<th>s1</th>
+<th>s2</th>
+<th>s3</th>
+<th>s4</th>
+<th>s5</th>
+<th>s6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th>0</th>
+<td>59.0</td>
+<td>2.0</td>
+<td>32.1</td>
+<td>101.00</td>
+<td>157.0</td>
+<td>93.2</td>
+<td>38.0</td>
+<td>4.00</td>
+<td>4.8598</td>
+<td>87.0</td>
+</tr>
+<tr>
+<th>1</th>
+<td>48.0</td>
+<td>1.0</td>
+<td>21.6</td>
+<td>87.00</td>
+<td>183.0</td>
+<td>103.2</td>
+<td>70.0</td>
+<td>3.00</td>
+<td>3.8918</td>
+<td>69.0</td>
+</tr>
+<tr>
+<th>2</th>
+<td>72.0</td>
+<td>2.0</td>
+<td>30.5</td>
+<td>93.00</td>
+<td>156.0</td>
+<td>93.6</td>
+<td>41.0</td>
+<td>4.00</td>
+<td>4.6728</td>
+<td>85.0</td>
+</tr>
+<tr>
+<th>3</th>
+<td>24.0</td>
+<td>1.0</td>
+<td>25.3</td>
+<td>84.00</td>
+<td>198.0</td>
+<td>131.4</td>
+<td>40.0</td>
+<td>5.00</td>
+<td>4.8903</td>
+<td>89.0</td>
+</tr>
+<tr>
+<th>4</th>
+<td>50.0</td>
+<td>1.0</td>
+<td>23.0</td>
+<td>101.00</td>
+<td>192.0</td>
+<td>125.4</td>
+<td>52.0</td>
+<td>4.00</td>
+<td>4.2905</td>
+<td>80.0</td>
+</tr>
+<tr>
+<th>...</th>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+<tr>
+<th>437</th>
+<td>60.0</td>
+<td>2.0</td>
+<td>28.2</td>
+<td>112.00</td>
+<td>185.0</td>
+<td>113.8</td>
+<td>42.0</td>
+<td>4.00</td>
+<td>4.9836</td>
+<td>93.0</td>
+</tr>
+<tr>
+<th>438</th>
+<td>47.0</td>
+<td>2.0</td>
+<td>24.9</td>
+<td>75.00</td>
+<td>225.0</td>
+<td>166.0</td>
+<td>42.0</td>
+<td>5.00</td>
+<td>4.4427</td>
+<td>102.0</td>
+</tr>
+<tr>
+<th>439</th>
+<td>60.0</td>
+<td>2.0</td>
+<td>24.9</td>
+<td>99.67</td>
+<td>162.0</td>
+<td>106.6</td>
+<td>43.0</td>
+<td>3.77</td>
+<td>4.1271</td>
+<td>95.0</td>
+</tr>
+<tr>
+<th>440</th>
+<td>36.0</td>
+<td>1.0</td>
+<td>30.0</td>
+<td>95.00</td>
+<td>201.0</td>
+<td>125.2</td>
+<td>42.0</td>
+<td>4.79</td>
+<td>5.1299</td>
+<td>85.0</td>
+</tr>
+<tr>
+<th>441</th>
+<td>36.0</td>
+<td>1.0</td>
+<td>19.6</td>
+<td>71.00</td>
+<td>250.0</td>
+<td>133.2</td>
+<td>97.0</td>
+<td>3.00</td>
+<td>4.5951</td>
+<td>92.0</td>
+</tr>
+</tbody>
+</table>
+<p>442 rows × 10 columns</p>
 </div>
-</div>
-</div>
-</div>
-</div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs">
-<div class="jp-Cell-inputWrapper" tabindex="0">
-<div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
-</div>
-<div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
-<div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
-<div class="cm-editor cm-s-jupyter">
-<div class="highlight hl-ipython3"><pre><span></span> 
-</pre></div>
 </div>
 </div>
 </div>
@@ -8129,43 +8287,14 @@ test: 67 (15.2%)
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p>Let's analyze the performance metrics to identify the best model:</p>
-<ol>
-<li><p>R-squared (R²):</p>
-<ul>
-<li>Higher R² indicates better fit</li>
-<li>Training R² gradually increases from degree 0 to 5</li>
-<li>Validation R² peaks at degree 2 (0.4492) and remains similar through degree 5 (0.4535)</li>
-</ul>
-</li>
-<li><p>Mean Absolute Error (MAE):</p>
-<ul>
-<li>Lower MAE indicates better predictions</li>
-<li>Both training and validation MAE improve significantly from degree 0 to 2</li>
-<li>Minimal improvements after degree 2</li>
-</ul>
-</li>
-<li><p>Mean Absolute Percentage Error (MAPE):</p>
-<ul>
-<li>Lower MAPE indicates better percentage accuracy</li>
-<li>Similar pattern to MAE, with significant improvements up to degree 2</li>
-<li>Minimal changes after degree 2</li>
-</ul>
-</li>
-</ol>
 <h2 id="8.-Identify-the-best-model-based-on-the-table-above.">8. Identify the best model based on the table above.<a class="anchor-link" href="#8.-Identify-the-best-model-based-on-the-table-above.">¶</a></h2><p>Best Model Identification:
-Based on these metrics, the degree 2 polynomial appears to be the best model because:</p>
-<ol>
-<li>It achieves a good balance between training and validation performance</li>
-<li>Higher degree polynomials (3-5) don't significantly improve performance</li>
-<li>It avoids overfitting while capturing the relationship between BMI and target</li>
-<li>Validation metrics are strong:<ul>
+Based on these metrics, the degree 2 polynomial appears to be the best model because:
+Validation metrics are strong:</p>
+<ul>
 <li>R² = 0.4492</li>
 <li>MAE = 41.7577</li>
 <li>MAPE = 40.3099</li>
 </ul>
-</li>
-</ol>
 <p><strong>Although degree = 3 shows higher R² lower MAE and MAPE, but the improvement on the validation set is not significant. In fact, R² in validation set shows a slight decrease, this may suggest that the degree=3 model is beginning to overfit the training data.</strong></p>
 <p>The degree 2 model provides a good trade-off between model complexity and performance. Higher degree polynomials don't offer substantial improvements and might risk overfitting.</p>
 </div>
@@ -8366,7 +8495,7 @@ Mean Absolute Error (MAE): 54.9755
         <span class="n">equation</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">coeffs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">x + "</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">equation</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">"</span><span class="si">{</span><span class="n">coeffs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">if</span> <span class="n">intercept</span> <span class="o">&lt;</span><span class="mi">0</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">intercept</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
     <span class="n">equation</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">" </span><span class="si">{</span><span class="n">intercept</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span>
 <span class="k">else</span><span class="p">:</span>
     <span class="n">equation</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">" + </span><span class="si">{</span><span class="n">intercept</span><span class="si">:</span><span class="s2">.2f</span><span class="si">}</span><span class="s2">"</span>
@@ -8535,8 +8664,6 @@ Degree 5:
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<p><strong>Explation:</strong>
-This code calculates and prints the number of trainable parameters for each polynomial degree (from 0 to 5). Now, let me explain these values:</p>
 <p>Degree 0: 1 parameter (only intercept)</p>
 <p>Equation: y = b</p>
 <p>Degree 1: 2 parameters (slope and intercept)</p>
@@ -8549,10 +8676,8 @@ This code calculates and prints the number of trainable parameters for each poly
 <p>Equation: y = ax⁴ + bx³ + cx² + dx + e</p>
 <p>Degree 5: 6 parameters</p>
 <p>Equation: y = ax⁵ + bx⁴ + cx³ + dx² + ex + f</p>
-<p>For each degree, the number of trainable parameters is equal to the degree of the polynomial plus one. This is because we always have an intercept term, plus coefficients for each power of x.
-The get_feature_names_out() function helps us see which features are actually included in each degree of the polynomial.</p>
-<p>As the degree increases, the model becomes more complex and can capture more intricate relationships, but it also becomes more prone to overfitting.
-When selecting the best model, we need to find a balance between model complexity (number of parameters) and performance. More parameters don't always mean a better model, especially when we consider generalization ability.</p>
+<p>As the degree increases, the model becomes more complex and can capture more intricate relationships, but it also becomes more prone to overfitting.</p>
+<p>When selecting the best model, we need to find a balance between model complexity (number of parameters) and performance. More parameters don't always mean a better model, especially when we consider generalization ability.</p>
 <p>This analysis helps us understand why we chose the degree 2 model: it provides enough complexity to capture non-linear relationships in the data while not being overly complex, thus avoiding overfitting.</p>
 </div>
 </div>
@@ -8593,13 +8718,8 @@ When selecting the best model, we need to find a balance between model complexit
 <li>The model appears to be influenced by outliers, particularly at the upper end of the input range. This could be skewing the polynomial curve upwards at higher input values.</li>
 </ul>
 </li>
-<li><p>Limited Explanatory Power:</p>
-<ul>
-<li>While the model captures a general trend, it fails to account for the substantial variability in the target variable. This suggests that there are likely other important factors influencing the target that are not included in this single-variable model.</li>
-</ul>
-</li>
 </ol>
-<p>In conclusion, while the polynomial regression model of degree 2 provides a basic fit to the data, it falls short in capturing the full complexity of the relationship between the input and target variables. The high variance and limited explanatory power of the model suggest that a more sophisticated approach, possibly incorporating additional variables and using more advanced modeling techniques, would be necessary for improved predictive performance.</p>
+<p>In conclusion, while the polynomial regression model of degree 2 provides a basic fit to the data, it falls short in capturing the full complexity of the relationship between the input and target variables. The high variance of the model suggest that a more sophisticated approach, possibly incorporating additional variables and using more advanced modeling techniques, would be necessary for improved predictive performance.</p>
 </div>
 </div>
 </div>
@@ -8644,7 +8764,11 @@ When selecting the best model, we need to find a balance between model complexit
 </div>
 <div class="jp-InputArea jp-Cell-inputArea"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput" data-mime-type="text/markdown">
-<h2 id="Run-different-Models">Run different Models<a class="anchor-link" href="#Run-different-Models">¶</a></h2>
+<h2 id="Run-different-Models">Run different Models<a class="anchor-link" href="#Run-different-Models">¶</a></h2><ol>
+<li>Two polynomial models (degrees &gt;1, of your choice)</li>
+<li>Two decision trees (e.g. consider changing the <code>max_depth</code> hyperparameter)</li>
+<li>Two kNNs</li>
+</ol>
 </div>
 </div>
 </div>
