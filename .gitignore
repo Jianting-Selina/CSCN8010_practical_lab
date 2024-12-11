@@ -1,2 +1,4 @@
 *.jpg
 *.keras
+.DS_Store
+data/
